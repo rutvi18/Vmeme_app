@@ -42,7 +42,7 @@ function updateUI() {
         logoutBtn.style.display = 'inline-block';
         welcomeMessage.style.display = 'inline-block';
         welcomeMessage.textContent = `Welcome, ${currentUsername}!`;
-        memeUploadSection.style.display = 'inline'; // Show upload section for logged-in users
+        memeUploadSection.style.display = 'none'; // Show upload section for logged-in users
         showSection('memeFeed'); // Always show meme feed
     } else {
         authSection.style.display = 'block';
@@ -248,6 +248,20 @@ async function handleAddComment(event) {
 
 
 // --- Event Listeners ---
+
+uploadMemeBtn.addEventListener('click', () => {
+    memeUploadSection.style.display = 'block';
+    showSection('memeUploadSection');
+});
+
+loginBtn.addEventListener('click', () => {
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
+});
+registerBtn.addEventListener('click', () => {
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'block';
+});
 
 // Auth form toggles
 showRegisterLink.addEventListener('click', (e) => {
