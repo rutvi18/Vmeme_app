@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VMeme - Share Your Memes!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>VMeme</h1>
+        <nav>
+            <button id="loginBtn">Login</button>
+            <button id="registerBtn">Register</button>
+            <button id="uploadMemeBtn" style="display:none;">Upload Meme</button>
+            <button id="logoutBtn" style="display:none;">Logout</button>
+            <span id="welcomeMessage" style="display:none;"></span>
+        </nav>
+    </header>
+
+    <main>
+        <section id="authSection" class="auth-section">
+            <div id="loginForm" class="auth-form">
+                <h2>Login</h2>
+                <form>
+                    <input type="text" id="loginUsername" placeholder="Username" required>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+            </div>
+
+            <div id="registerForm" class="auth-form" style="display:none;">
+                <h2>Register</h2>
+                <form>
+                    <input type="text" id="registerUsername" placeholder="Username" required>
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
+            </div>
+        </section>
+
+        <section id="memeUploadSection" class="meme-upload-section" style="display:none;">
+            <h2>Upload a New Meme</h2>
+            <form id="memeUploadForm">
+                <input type="text" id="memeTitle" placeholder="Meme Title" required>
+                <input type="text" id="memeTags" placeholder="Tags (comma-separated, e.g., funny, relatable)">
+                <input type="file" id="memeImage" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+
+        <section id="memeFeed" class="meme-feed">
+            <h2>Latest Memes</h2>
+            <div id="memesContainer" class="memes-container">
+                <!-- Memes will be loaded here by JavaScript -->
+            </div>
+            <button id="loadMoreBtn">Load More</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

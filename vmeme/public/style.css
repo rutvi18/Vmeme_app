@@ -1,0 +1,168 @@
+/* public/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #0056b3;
+}
+
+main {
+    padding: 1rem;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.auth-section, .meme-upload-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.auth-form input, .meme-upload-section input {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.auth-form button, .meme-upload-section button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.auth-form button:hover, .meme-upload-section button:hover {
+    background-color: #218838;
+}
+
+.meme-feed h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.memes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.meme-card {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.meme-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Ensures image fits without cropping */
+    max-height: 300px; /* Limit height for uniform display */
+}
+
+.meme-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows info section to expand */
+}
+
+.meme-info h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2em;
+}
+
+.meme-info p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.meme-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; /* Pushes actions to the bottom */
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.meme-actions button {
+    background: none;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.meme-actions button:hover {
+    background-color: #e7f3ff;
+}
+
+#loadMoreBtn {
+    display: block;
+    margin: 2rem auto 0;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#loadMoreBtn:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .memes-container {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
